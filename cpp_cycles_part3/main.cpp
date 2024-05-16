@@ -11,7 +11,8 @@ int main() {
 		"\n(1)-Christmas tree toys - " << toys_cost << "$ " << toys_amount << "x\n"
 		"\n(2)-Christmas pine  - " << pine_cost << "$ " << pine_amount << "x\n"
 		"\n(3)-Snowman statue - " << snowman_cost << "$ " << snowman_amount << "x\n"
-		"\n(4)-Santa hat - " << hat_cost << "$ " << hat_amount << "x\n"
+		"\n(4)-Santa hat - " << hat_cost << "$ " << hat_amount << "x\n" <<
+		"\n(9)-Cash a check"
 		<<"\n(0)-End procedure" << endl;
 
 
@@ -19,7 +20,7 @@ int main() {
 	float sum = 0;
 	int amount = 0;
 	float sale = 0;
-
+	int client_amount = 0;
 	
 	while (cashier_choose != 0) {
 		switch (cashier_choose)
@@ -71,12 +72,17 @@ int main() {
 			sum += ((hat_cost - hat_cost * (sale / 100)) * amount);
 			cout << "\nYour choose:"; cin >> cashier_choose;
 			break;
+		case 9:
+			cout << "\nWell done!\nSummary:" << sum << endl;
+			client_amount++;
+			cout << "\nYour choose:"; cin >> cashier_choose;
+			break;
 		default:
 			cout << "Wrong input!Try again\n";
 			cout << "Your choose:"; cin >> cashier_choose;
 			break;
 		}
 	}
-	cout << "\nWell done!\nSummary:" << sum << endl;
+	cout << "\nWell done!\nAmount of clients:" << client_amount << endl;
 	return 0;
 }
